@@ -1,6 +1,7 @@
 package org.example;
 
 public class LongConvertion {
+
 	public static void main(String[] args) {
 		try {
 			Integer l = 500000011;
