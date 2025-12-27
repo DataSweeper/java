@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.learning'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // AWS SDK for Java v2 - Kinesis
+    implementation("software.amazon.awssdk:kinesis:2.37.1")
+
+    // Optional: Include other AWS modules you might need
+    implementation("software.amazon.awssdk:aws-core:2.37.1")
+    implementation("software.amazon.awssdk:sdk-core:2.37.1")
+
+    // For URL connection client (optional)
+    implementation("software.amazon.awssdk:url-connection-client:2.37.1")
+
+    // For Netty non-blocking I/O (optional, for async operations)
+    implementation("software.amazon.awssdk:netty-nio-client:2.37.1")
+}
+
+test {
+    useJUnitPlatform()
+}
